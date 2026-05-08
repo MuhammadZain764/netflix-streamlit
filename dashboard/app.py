@@ -1,11 +1,19 @@
+import os
 import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+import os
+import pandas as pd
+
+BASE_DIR = os.path.dirname(__file__)
+file_path = os.path.join(BASE_DIR, "netflix_titles.csv")
+
+df = pd.read_csv(file_path)
+
 st.title("Netflix Project Dashboard")
 
-df = pd.read_csv("netflix_titles.csv")
 
 df_copy = df.copy()
 
@@ -95,5 +103,6 @@ selected_title = st.selectbox(
 
 filtered_title = filtered_data[filtered_data["title"] == selected_title]
 st.write(filtered_title[["title", "type", "release_year", "duration", "country"]])
+
 
 
