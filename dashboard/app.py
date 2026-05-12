@@ -105,4 +105,17 @@ filtered_title = filtered_data[filtered_data["title"] == selected_title]
 st.write(filtered_title[["title", "type", "release_year", "duration", "country"]])
 
 
+actor_name = st.text_input("Search by Actor or Actress")
+
+if actor_name:
+    actor_filter = filtered_data[
+        filtered_data["cast"].fillna("").str.contains(actor_name, case=False)
+        ]
+    
+    st.subheader(f"Results for '{actor_name}'")
+    st.write(actor_filter[["title", "release_year", "type", "country"]])
+    
+
+
+
 
