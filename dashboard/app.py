@@ -4,8 +4,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-import os
-import pandas as pd
+
 
 BASE_DIR = os.path.dirname(__file__)
 file_path = os.path.join(BASE_DIR, "netflix_titles.csv")
